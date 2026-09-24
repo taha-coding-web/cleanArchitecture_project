@@ -2,8 +2,8 @@ namespace Project.Domain.Entities;
 
 public class Group
 {
-    public int ID {get ; set;}
-    public string Name {get ; set;}
+    public int Id {get ; set;}
+    public string Name {get ; set;} = null!;
 
-    public ICollection<Persone> Persons {get ; set;} = new List<Persone>();
+    public ICollection<Person> Persons {get ; set;} = new List<Person>();
 }
