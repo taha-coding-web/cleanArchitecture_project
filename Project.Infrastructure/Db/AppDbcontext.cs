@@ -38,6 +38,12 @@ public class AppDbcontext : DbContext
             .OnDelete(DeleteBehavior.Restrict);
 
 
+
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbcontext).Assembly);
+            
+
+
+
         }
         );
     }

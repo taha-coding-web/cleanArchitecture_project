@@ -1,9 +1,11 @@
+using Project.Domain.Common;
+
 namespace Project.Domain.Entities;
 
-public class Group
+public class Group : BaseEntity<int>
 {
-    public int Id {get ; set;}
+    
     public string Name {get ; set;} = null!;
 
-    public ICollection<Person> Persons {get ; set;} = new List<Person>();
+    public ICollection<Person> People {get ; set;} = new List<Person>();
 }

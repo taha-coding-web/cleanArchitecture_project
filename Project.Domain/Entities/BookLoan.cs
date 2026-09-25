@@ -1,8 +1,10 @@
+using Project.Domain.Common;
+
 namespace Project.Domain.Entities;
 
-public class BookLoan
+public class BookLoan : BaseEntity<int>
 {
-    public int Id {get ; set;}
+    
     public int PersonId {get ; set;}
     public int BookId {get ; set;}
 

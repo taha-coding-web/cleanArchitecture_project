@@ -1,8 +1,10 @@
+using Project.Domain.Common;
+
 namespace Project.Domain.Entities;
 
-public class Phone
+public class Phone : BaseEntity<int>
 {
-    public int Id {get ; set;}
+   
     public string Title {get ; set;} = null!;
     public string Number {get ; set;} = null!;
 

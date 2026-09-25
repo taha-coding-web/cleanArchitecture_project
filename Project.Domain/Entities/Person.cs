@@ -1,7 +1,9 @@
+using Project.Domain.Common;
+
 namespace Project.Domain.Entities;
-public class Person
+public class Person : BaseEntity<Guid>
 {
-    public int Id {get ; set;}
+
     public string FullName {get ; set;} = null!;
     public int GroupId {get ; set;}
     public Group Group {get ; set;} = null!;
