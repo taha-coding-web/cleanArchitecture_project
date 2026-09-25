@@ -1,8 +1,17 @@
 using Microsoft.EntityFrameworkCore;
 using Project.Infrastructure.Persistence;
+using DotNetEnv;
+using Project.Infrastructure.Extentsions;
+
+DotNetEnv.Env.Load();
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAppDbcontext(builder.Configuration);
+
+var ConecitonString = builder.Configuration.GetConnectionString("DefaultConneciton");
+
 
 
 builder.Services.AddDbContext<AppDbcontext>(opitons =>

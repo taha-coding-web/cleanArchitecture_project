@@ -19,16 +19,7 @@ public class AppDbcontext : DbContext
 
         modelBuilder.Entity<BookLoan>(entity =>
         {
-            entity.HasKey(e => e.Id);
-
-            entity.Property(e => e.Description).HasMaxLength(500);
-
-            entity.Property(e => e.LoanDate).IsRequired();
-
-            entity.HasOne(d => d.Person)
-            .WithMany(p => p.bookLoans)
-            .HasForeignKey(d => d.PersonId)
-            .OnDelete(DeleteBehavior.Restrict);
+      
 
 
 

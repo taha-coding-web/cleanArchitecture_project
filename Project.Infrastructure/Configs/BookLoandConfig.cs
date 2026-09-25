@@ -12,14 +12,20 @@ public class BookLoandConfig : IEntityTypeConfiguration<BookLoan>
 
         builder.HasOne(p => p.Person)
         .WithMany(g => g.bookLoans)
-        .HasForeignKey(x => x.Book)
+        .HasForeignKey(x => x.PersonId)
+        .IsRequired();
+
+
+        builder.HasOne(p => p.Book)
+        .WithMany()
+        .HasForeignKey(x => x.BookId)
         .IsRequired();
 
         builder.Property(x => x.LoanDate)
         .IsRequired();
 
-        builder.Property(x => x.ReturnDate)
-        .IsRequired();
+        builder.Property(x => x.ReturnDate);
+        
 
 
         builder.Property(x => x.Description)
